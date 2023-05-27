@@ -18,10 +18,10 @@ const Form = ({addItem}) => {
             <input type='text' 
             className='form-input' 
             value={newItemName}
-            onChange={(e) => setNewItemName(e.target.value)} />
+            onChange={(e) => setNewItemName(e.target.value)} /><button type='submit' className='btn'>Add Item</button>
         </div>
        
-        <button type='submit' className='btn'>Add Item</button>
+        
       </form>
   )
 }
