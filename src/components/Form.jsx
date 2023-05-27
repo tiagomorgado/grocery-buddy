@@ -1,15 +1,14 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react"
 
-const Form = () => {
+const Form = ({addItem}) => {
     const [newItemName, setNewItemName] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if(e.target.value === '') {
-          console.log('empty input')
-          return
-        }
-        console.log(newItemName);
+        if(!newItemName) return
+        addItem(newItemName)
+        setNewItemName('')
       }
 
   return (
