@@ -9,7 +9,6 @@ const Form = () => {
           console.log('empty input')
           return
         }
-
         console.log(newItemName);
       }
 
