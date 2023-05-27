@@ -4,21 +4,31 @@ import Form from './components/Form'
 import { nanoid } from 'nanoid'
 import Items from './components/Items'
 
+const setLocalStorage = (items) => {
+  localStorage.setItem('list', JSON.stringify(items));
+};
+
+const defaultList = JSON.parse(localStorage.getItem('list') || '[]');
+
 function App() {
-  const [items, setItems] = useState([])
+  
+  const [items, setItems] = useState(defaultList)
 
   const addItem = (itemName) => {
     const newItem = {
-      name:itemName,
-      completed:false,
+      name: itemName,
+      completed: false,
       id: nanoid(),
     };
-    setItems([...items, newItem])
-  }
+    const newItems = [...items, newItem];
+    setItems(newItems);
+    setLocalStorage(newItems);
+  };
 
   const removeItem = (id) => {
     const newItems = items.filter((item) => item.id !== id)
     setItems(newItems)
+    setLocalStorage(newItems);
   }
 
   return (
