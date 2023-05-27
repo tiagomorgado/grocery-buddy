@@ -6,7 +6,9 @@ function App() {
   const [items, setItems] = useState([])
 
   return (
-    <Form />
+    <section className='section-center'>
+      <Form />
+    </section>
   )
 }
 

@@ -13,7 +13,6 @@ const Form = () => {
       }
 
   return (
-    <section className='section-center'>
       <form onSubmit={handleSubmit}>
         <h4>Grocery Buddy</h4>
         <div className='form-control'>
@@ -25,9 +24,6 @@ const Form = () => {
        
         <button type='submit' className='btn'>Add Item</button>
       </form>
-    </section>
   )
 }
 export default Form
-
-
